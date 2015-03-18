@@ -1,5 +1,5 @@
 require 'socket'      # Sockets are in standard library
-
+#Hola soy German
 hostname = 'localhost'
 port = 2000
 
