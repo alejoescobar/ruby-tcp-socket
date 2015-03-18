@@ -5,16 +5,16 @@ require 'socket'      # Sockets are in standard library
 
 hostname = '192.168.10.75'
 port = 2000
-
+input = String.new
 s = TCPSocket.open(hostname, port)
 
-while line = s.gets   # Read lines from the socket
-  puts line.chop      # And print with platform line terminator
-  s.write "Hello"
-  puts "got back:" + s.recv(1024)
-  # message = gets.chomp
-  # message = 'GETHELLO'
-  # s.write(message)
-  # puts s.read(5)
+while input != "BYE"
+
+  input = gets.chomp
+  s.write(input)
+
+  puts "recieved:" + s.recv(1024)
+
 end
+
 s.close               # Close the socket when done
